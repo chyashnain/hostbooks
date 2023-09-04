@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="container-fluid">
+      <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let student of students$ | async">
+            <th scope="row">{{ student.id }}</th>
+            <td>{{ student.email }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.password }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm me-2" (click)="openModal(student)">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteStudent(student)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
